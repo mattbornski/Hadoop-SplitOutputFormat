@@ -22,7 +22,9 @@ ls -l /path/to/output/folder
 
 ### With Hadoop Streaming on Amazon Elastic MapReduce
 
-TODO generate example
+```bash
+elastic-mapreduce --create --num-instances 2 --slave-instance-type m1.small --hadoop-version 1.0.3 --ami-version 2.2 --jar /path/to/script-runner.jar --args "/path/to/distribute_jar.sh,/path/to/hadoop-splitoutputformat.jar" --stream --input /path/to/input --output /path/to/output/folder --mapper /path/to/mapper.py --reducer /path/to/reducer.py --args "-libjars,/home/hadoop/hadoop-splitoutputformat.jar,-outputformat,com.bornski.hadoop.SplitOutputFormat"
+```
 
 ## Testing
 
